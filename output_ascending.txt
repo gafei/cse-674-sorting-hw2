@@ -1,0 +1,330 @@
+
+Generating 128000 Numbers to ascending.txt, descending.txt and random.txt
+
+Sorting 1000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 1.7226e-05 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 0.00489067 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 0.00499843 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 8.984e-06 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.000324008 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.000666724 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 0.0114005 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.000697553 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 4.2474e-05 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 8.335e-05 s
+
+Sorting 2000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 4.875e-05 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 0.0179907 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 0.0172402 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 1.6791e-05 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.000709426 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.00141704 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 0.0370606 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.000744234 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 7.3389e-05 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.000139782 s
+
+Sorting 4000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 5.2561e-05 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 0.0662236 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 0.0692479 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 3.3557e-05 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.0015724 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.00300237 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 0.13927 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.00148724 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 0.000146014 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.000278686 s
+
+Sorting 8000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 0.000103231 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 0.266395 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 0.278792 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 6.6932e-05 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.00332897 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.00665359 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 0.558479 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.00293648 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 0.000288254 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.000552739 s
+
+Sorting 16000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 0.000210246 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 1.06827 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 1.53869 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 0.00020971 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.00810212 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.014175 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 2.74108 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.011578 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 0.000757846 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.00119732 s
+
+Sorting 32000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 0.000507584 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 4.66384 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 4.71676 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 0.000273166 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.0161199 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.0291506 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 9.00343 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.0150165 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 0.00114905 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.00223557 s
+
+Sorting 64000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 0.000837538 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 17.0873 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 18.7602 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 0.000566789 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.0325977 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.10456 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 36.1604 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.0294882 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 0.00234658 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.00442522 s
+
+Sorting 128000 Ascending Elements
+After Insertion Sort
+This is ascending. 
+Elapsed time: 0.00166121 s
+
+After Selection Sort
+This is ascending. 
+Elapsed time: 69.1686 s
+
+After Bubble Sort
+This is ascending. 
+Elapsed time: 73.1515 s
+
+After Bubble Sort with flag
+This is ascending. 
+Elapsed time: 0.00107268 s
+
+After Heapsort
+This is ascending. 
+Elapsed time: 0.0698342 s
+
+After Merge Sort
+This is ascending. 
+Elapsed time: 0.128815 s
+
+After Quicksort
+This is ascending. 
+Elapsed time: 144.34 s
+
+After Radix Sort
+This is ascending. 
+Elapsed time: 0.0701205 s
+
+After Smooth Sort
+This is ascending. 
+Elapsed time: 0.00464435 s
+
+After Counting Sort
+This is ascending. 
+Elapsed time: 0.00883892 s
