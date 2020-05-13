@@ -219,7 +219,6 @@ void insertionSort::sort(std::vector <int> &vector){
 }
 
 void selectionSort::sort(std::vector <int> &vector){
-    //for(size_t i = 0; i < (vector.size() - 1); ++i)
      size_t j, least;
         for(size_t i = 0; i < (vector.size() - 1); ++i){
             for(j = i + 1, least = i; j < vector.size(); ++j){ 
@@ -454,10 +453,6 @@ void heapSort::heapify(std::vector <int> &vector, int heapSize, int index){
         heapify(vector, heapSize, largest); 
     } 
 
-
-
-}
-void heapSort::createHeap(std::vector <int> &vector){
 
 
 }
@@ -710,7 +705,7 @@ void radixSort::rSort(std::vector <int> &inputVector, int exp){
 
         // Change count[i] so that count[i] now contains actual 
         //  position of this digit in output[] 
-        for (int i = 1; i < 10; i++)  // max number of 10 digits here, use max_value here?
+        for (int i = 1; i < 10; i++)  // max number of 10 digits here
             counts[i] += counts[i - 1]; 
 
 
@@ -749,7 +744,7 @@ void countingSort::sort(std::vector <int> &vector){
             ++counts[vector[i]];
         }
 
-        //write back to the array
+        //write back to the vector
         vector.clear();
         for(int i = 0; i < max_value; ++i){
             int c = counts[i];

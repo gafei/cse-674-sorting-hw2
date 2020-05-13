@@ -456,34 +456,4 @@ int main(int argc, char *argv[]){
 		return 0;
 	
 	
-
-    
-
-//auto start = std::chrono::high_resolution_clock::now();
-    //quickSortObj.sort(vectorTestrandom);
-    //bubbleSortObj.sort(vectorTestrandom);
-    //bubbleSortFlagObj.sort(vectorTest);
-    //selectionSortObj.sort(vectorTest);
-    //insertionSortObj.sort(vectorTest);
-   // mergeSortObj.sort(vectorTestrandom);
-  //  heapSortObj.sort(vectorTestrandom);
-   // countingSortObj.sort(vectorTestdesecend);
-   //radixSortObj.sort(vectorTestrandom);
-  //  auto finish = std::chrono::high_resolution_clock::now();
-
-
-//std::chrono::duration<double> qselapsed = finish - start;
-//std::cout << "Elapsed time: " << qselapsed.count() << " s\n";
-
-/*****
-        for(size_t i = 0; i < vectorTestdescendInsertion.size(); ++i){ 
-        
-        std::cout << vectorTestdescendInsertion[i] << " ";
-        
-        }    
-
-*******/
-   
-   // return 0;
-
 }        
