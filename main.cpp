@@ -17,7 +17,7 @@ smoothSort smoothSortObj;
 radixSort radixSortObj;
 
 
-static void show_usage(std::string name)
+static void showUsage(std::string name)
 {
     std::cerr << "Usage: " << "main " << "[OPTIONS]\n"
               << "Options:\n"
@@ -449,7 +449,7 @@ int main(int argc, char *argv[]){
 				
 				cout <<"Invalid sort option selected.\n";
 				sortType.push_back(argv[i]);
-				show_usage(argv[0]);
+				showUsage(argv[0]);
 				return 0;
 			}
 		}
