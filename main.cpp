@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
     genDataRandom(numbersToGen);
 	
 	if (argc < 1) {
-			show_usage(argv[0]);
+			showUsage(argv[0]);
 			return 1;
 		}
 		std::vector <std::string> sortType;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]){
 		for (int i = 1; i < argc; ++i) {
 			std::string arg = argv[i];
 			if ((arg == "-h") || (arg == "--help")) {			
-				show_usage(argv[0]);
+				showUsage(argv[0]);
 				return 0;
 			
 			
