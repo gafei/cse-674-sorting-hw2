@@ -475,56 +475,45 @@ void smoothSort::sort(std::vector <int> &vector){
 
 smoothSort::heapsizes smoothSort::heapify (int A[], uint32_t num){
 
-    heapsizes hsz;       // 'List' of sizes of existing heaps
+    heapsizes hsz;       
     
-    uint32_t i;          // Loop index for traversing the array
+    uint32_t i;          
     
-    int wbf;             // Flag indicating whether a newly
-                         // created heap will be fused later in a
-                         // larger heap (wbf!=0) or not (wbf==0)
+    int wbf;             
 
-    hsz.mask = 1;             // Create a heap of size L[1]
-    hsz.offset = 1;           // containing the first element
+    hsz.mask = 1;            
+    hsz.offset = 1;           
 
-    for (i=1; i<num; i++)     // With every following element...
+    for (i=1; i<num; i++) 
     {
-        if (hsz.mask & 2)          // If possible (if contiguous
-        {                                  // Leonardo numbers),
-            hsz.mask = (hsz.mask>>2) | 1;  // fuse last two heaps
+        if (hsz.mask & 2)          
+        {                                  
+            hsz.mask = (hsz.mask>>2) | 1;  
             hsz.offset += 2;
-        }                          // Otherwise,
-        else if (hsz.offset == 1)  // if last heap has size L[1]
+        }                          
+        else if (hsz.offset == 1)  
         {
-            hsz.mask = (hsz.mask << 1) | 1;  // the new is L[0]
+            hsz.mask = (hsz.mask << 1) | 1;  
             hsz.offset = 0;
         }
-        else                       // Otherwise, new heap L[1]
+        else                       
         {
             hsz.mask = (hsz.mask << (hsz.offset-1)) | 1;
             hsz.offset = 1;
         }
         
-            // The current heap will be fused in the future if:
-            //
-            //     a) The sizes of this heap and the previous are
-            //        contiguous Leonardo numbers AND there is at
-            //        least one more element in the array
-            //  OR
-            //     b) This heap has size L[x] where x>0 AND there
-            //        is still space for a heap of size L[x-1] and
-            //        one more element (L[x]+L[x-1]+1 --> L[x+1])
 
         wbf = ( (hsz.mask & 2) &&
                 i+1 < num                 ) ||
               ( hsz.offset > 0    &&
                 1ULL+i+L[hsz.offset-1] < num );
 
-        if (wbf)                       // If this new heap will be
-            sift_in (A+i, hsz.offset); // fused, don't propagate  //increments element in array to next one
-        else                           // the root (just fix this
-            interheap_sift (A+i, hsz); // heap). If it will _not_ //increments element in array to next one //define as next
-    }                                  // be fused, propagate the
-                                       // root through the
+        if (wbf)                       
+            sift_in (A+i, hsz.offset); 
+        else                           
+            interheap_sift (A+i, hsz); 
+    }                                  
+                                       
     return hsz;   
 
 
@@ -533,123 +522,123 @@ smoothSort::heapsizes smoothSort::heapify (int A[], uint32_t num){
 void smoothSort::extract (int A[], uint32_t num, heapsizes hsz){
     uint32_t i;          // Loop index for traversing the array
 
-    uint32_t ch[2];      // Position of left and right children
-                         // of a newly created heap
+    uint32_t ch[2];      
+                         
     int j;
-                             // Extract elems. starting at the end
-    for (i=num-1; i>1; i--)  // When only two remain, it's done
+                             
+    for (i=num-1; i>1; i--)  
     {
-        if (hsz.offset<2)         // If last heap has size L[1] or
-        {                         // L[0] (both ==1), just remove
-            do                    // this heap (update the
-            {                     // heapsizes struct) leaving the
-                hsz.mask >>= 1;   // single element untouched
+        if (hsz.offset<2)         
+        {                         
+            do                    
+            {                    
+                hsz.mask >>= 1;   
                 hsz.offset ++;
-            }                       // The mask will never be 0
-            while (!(hsz.mask&1));  // because the loop terminates
-        }                           // early (with two heaps of
-        else                        // sizes L[1] and L[0])
+            }                       
+            while (!(hsz.mask&1));  
+        }                           
+        else                        
         {
-            ch[1] = i - 1;                   // Position of right
-            ch[0] = ch[1] - L[hsz.offset-2]; // and left children
+            ch[1] = i - 1;                   
+            ch[0] = ch[1] - L[hsz.offset-2]; 
 
-            hsz.mask &= ~1ULL;       // Remove current heap
+            hsz.mask &= ~1ULL;       
 
-            for (j=0; j<2; j++)      // For every child heap (left
-            {                                            // first)
+            for (j=0; j<2; j++)     
+            {                                           
                 hsz.mask = (hsz.mask << 1) | 1;
-                hsz.offset --;                  // Add heap to the
-                                                // list and ensure
-                interheap_sift (A+ch[j], hsz);  // ordering of
-            }                                   // roots
+                hsz.offset --;                  
+                                               
+                interheap_sift (A+ch[j], hsz);  
+            }                                   
         }
     }
 }
 void smoothSort::sift_in (int * root, int size){
     
     
-    int * left, * right; // Pos. of children heaps
-    int * next;          // Chosen child (greater root)
-    int tmp;             // Value to move down
-    int nsz;                        // Size of chosen child heap
+    int * left, * right; // Position of children heaps
+    int * next;         
+    int tmp;             
+    int nsz;                     
     
-    if (size < 2)        // If we are in a leaf,
-        return;          // there's nothing to do
+    if (size < 2)      
+        return;         
 
-    tmp = *root;         // Backup the initial value
+    tmp = *root;        
     
-    do                        // While there are children heaps...
+    do                      
     {
-        right = root - 1;           // Locate children
+        right = root - 1;          
         left = right - L[size-2];
         
-        if (*right < *left)         // Compare their roots
+        if (*right < *left)         
         {
-            next = left;            // Choose left child heap
-            nsz = size - 1;         // (larger subheap)
+            next = left;            
+            nsz = size - 1;         
         }
         else
         {
-            next = right;           // Choose right child heap
-            nsz = size - 2;         // (smaller subheap)
+            next = right;           
+            nsz = size - 2;         
         }
-                                    // If both roots are less than
-        if (*next <= tmp)           // the initial root, we have
-            break;                  // reached its final position
+                                    
+        if (*next <= tmp)           
+            break;                  
 
-        *root = *next;              // Otherwise, push up the
-                                    // greater root and
-        root = next;                // proceed down to the
-        size = nsz;                 // next level
+        *root = *next;              
+                                   
+        root = next;                
+        size = nsz;                 
     }
-    while (size > 1);          // If we reach a leaf, stop
+    while (size > 1);          
     
     *root = tmp;  
 
 }
 void smoothSort::interheap_sift (int * root, heapsizes hsz){
 
-    int * next;   // Pos. of (root of) next heap
-    int * left;   // Pos. of left child of current heap
-    int * right;  //  "   "  right  "   "     "     "
+    int * next;   // Position of (root of) next heap
+    int * left;   // Position of left child of current heap
+    int * right;  // Position of right child of current heap
     int tmp;      // Value to move left
     int max;      // Effective root value of curr. heap
     
-    tmp = *root;      // Backup the initial value
+    tmp = *root;      
     
-    while (hsz.mask != 1)  // Traverse the list of heaps
-    {                      // from right to left
+    while (hsz.mask != 1)  
+    {                      
         max = tmp;
         
-        if (hsz.offset > 1)           // If this heap has children
+        if (hsz.offset > 1)           
         {
-            right = root - 1;                 // Locate children
+            right = root - 1;                 
             left = right - L[hsz.offset-2];
             
-            if (max < *left)                  // Use the maximum
-                max = *left;                  // value for the
-                                              // comparison below,
-            if (max < *right)                 // since it is the
-                max = *right;                 // effective root
-        }                                     // of this heap
+            if (max < *left)                  
+                max = *left;                  
+                                              
+            if (max < *right)                
+                max = *right;                
+        }                                     
         
-        next = root - L[hsz.offset];  // Position of next heap
+        next = root - L[hsz.offset];  
 
-        if (*next <= max)             // If the ordeing is OK,
-            break;                    // stop here
+        if (*next <= max)           
+            break;                   
 
-        *root = *next;                // Otherwise, push up the
-        root = next;                  // root of that heap and
-                                      // go there
+        *root = *next;                
+        root = next;                  
+                                      
         do
-        {                             // Extract the previous
-            hsz.mask >>= 1;           // heap from the list (note
-            hsz.offset ++;            // that 'hsz' is just a
-        }                             // temporary copy)
+        {                             
+            hsz.mask >>= 1;           
+            hsz.offset ++;            
+        }                             
         while (!(hsz.mask&1));
     }
-                                      // Put the initial root in
-    *root = tmp;                      // the heap where we stopped
+                                      
+    *root = tmp;                      
     sift_in (root, hsz.offset);      
 
 
