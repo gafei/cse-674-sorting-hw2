@@ -211,7 +211,7 @@ It's best case time complexity of O(n log n) is seen when there's a
 random assortment of numbers. Sorting 128,000 random elements took
 only 0.042 seconds.
 
-Soring an already sorted ascending list of numbers took quicksort
+Sorting an already sorted ascending list of numbers took quicksort
 as long as 144 seconds for 128,000 elements. Elements as few as 16,000
 took as long as 2.7 seconds. A descending list of numbers took less seconds,
 where sorting 128,000 elements only took 84 seconds. 
